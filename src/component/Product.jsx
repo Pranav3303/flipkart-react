@@ -11,9 +11,10 @@ const Product = () => {
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  let url = `https://demohotelsapi.pythonanywhere.com/hotels/?limit=${PAGE_SIZE}&skip=${
-    current * PAGE_SIZE
-  }`;
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  let url = `${API_URL}/hotels/?limit=${PAGE_SIZE}&skip=${current * PAGE_SIZE}`;
+
 
   async function hotelFetch() {
     setLoading(true); // start skeleton
