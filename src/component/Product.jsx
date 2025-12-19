@@ -160,10 +160,9 @@ const Product = () => {
 };
 
 export default Product;
+
 function StarRating({ rating }) {
-  let stars = [];
-  for (let i = 1; i <= Math.ceil(rating); i++) {
-    stars.push(<FaStar style={{ color: "yellow" }} />);
-  }
-  return stars;
+  return Array.from({ length: Math.ceil(rating) }).map((_, i) => (
+    <FaStar key={i} style={{ color: "yellow" }} />
+  ));
 }
