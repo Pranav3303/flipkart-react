@@ -9,7 +9,7 @@ const App = () => {
   const location = useLocation();
   return (
     <div>
-      <Navbar
+      <Navbar />
       <Category />
       {location.pathname === '/' ? <LandingPage /> : <Outlet />}
       <Footer />
